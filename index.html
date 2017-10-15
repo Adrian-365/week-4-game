@@ -16,17 +16,17 @@
 		<p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. </p><br>
 		<p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p><br>
 		<p>The value of each crystal is hidden from you until you click on it.</p><br>
-		<p>Each time when the game starts, the game will change the values of each crystal.</p><br><br><br><br>
+		<p>Each time when the game starts, the game will change the values of each crystal.</p><br><br><br><br><br>
 </div>
 
-<div>
-<div id="random">0</div>
 
-<div id="winLose">
-	<p>Wins:  </p><p id="wins"></p><br>
-	<p>Losses:  </p><p id="losses"></p>
-</div>
-</div>
+	<div id="random">0</div>
+
+	<div id="winLose">
+		<p id="wins"></p>  </p><br>
+		<p id="losses"></p> </p>
+	</div>
+
 
 <div id="crystals">	
 	<button id="red"><img src="./assets/images/red.png"></button>
@@ -40,12 +40,11 @@
 <div id="guess">0</div>
 
 
-	<script type="text/javascript">"./assets/javascript.game.js"</script>
+<!--  link to jquery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!-- link to my relative javascript file -->
+  <script type="text/javascript" src="./assets/javascript/game.js"></script>
 
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
   
 
 </body>
