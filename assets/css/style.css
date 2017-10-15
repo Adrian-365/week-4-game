@@ -12,20 +12,29 @@ h1 {font-size: 25px;}
 	box-sizing: border-box;
 	color: white;
 	background-color: #c97028;
-	margin: 5px;
+	margin: 10px;
 	widows: 200px;
-	padding: 10px;
+	padding-top: 15px;
+	padding-left: 10px;
 	width: 210px;
 	
 }
 
 #instructions {
 	box-sizing: border-box;
+	font-weight: bold;
 	padding: 10px;
 	color: #4caa5a;
 	background-color: #fce6cd;
 	width: 510px;
-	margin: 5px;
+	margin: 10px;
+}
+
+#randomContainer {
+	background-color: black;
+	box-sizing: border-box;
+	height: 120px;
+	width: 500px;
 }
 
 #random {
@@ -34,7 +43,7 @@ h1 {font-size: 25px;}
 	padding: 10px;
 	color: purple;
 	background-color: #81d4a9;
-	margin: 5px;
+	margin: 10px;
 	width: 225px;
 	height: 100px;
 }
@@ -42,10 +51,11 @@ h1 {font-size: 25px;}
 #winLose {
 	box-sizing: border-box;
 	padding: 10px;
-	margin: 5px;
+	margin: 10px;
 	background-color: #4afdfd;
 	width: 75px;
 	height: 100px;
+
 }
 
 #crystals {
@@ -59,12 +69,15 @@ button {
 	height: 100px;
 	width: 100px;
 	padding: 0;
-	margin: 10px;
+	margin: 5px;
 	float: left;
+	background-color: white;
+	border-style: none;
 }
 
 button:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
 }
 
 #red {}
@@ -75,7 +88,7 @@ button:hover {
 #guessHeader {
 	box-sizing: border-box;
 	padding: 10px;
-	margin: 5px;
+	margin: 10px;
 	color: white;
 	background-color: #2ca294;
 	width: 250px;
@@ -86,7 +99,7 @@ button:hover {
 	font-size: 25px;
 	box-sizing: border-box;
 	padding: 10px;
-	margin: 5px;
+	margin: 10px;
 	color: white;
 	background-color: #2ca294;
 	width: 250px;
