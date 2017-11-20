@@ -1,8 +1,8 @@
 
-var crystalGame = {
+$(document).ready(function() {
 
-// a method to initiaze the game
-initializeGame: function () {
+// a function to initiaze the game
+function initializeGame() {
 	// assign a random number between 19 -120 as a target number and print it to the screen.
 	var random = Math.floor(Math.random() * 101 +19);	
 	$('#random').html(random);
@@ -30,15 +30,19 @@ initializeGame: function () {
 	$('#losses').html("Losses: " +losses);
 	$('#score').html(0).data('scoreValue', 0);
 
-},
+};
 
-// a method to add a gem's value to the score when that gem gets clicked.
-clickEvent: function() {
+var newScore =  0;
+
+// when a gem is clicked, add it's value to the score
+$(document).on('click', 'button', function() {
+		console.log('button clicked!!');
 		var clickValue = ($(this).data('gemValue'));
-		var newScore = ($('#score').data('scoreValue'))+ clickValue;
 		console.log(clickValue);
+		
+		newScore += clickValue;		
 		console.log(newScore);
-		$('#score').html(newScore);
+		$('#guess').text(newScore);
 	
 		// check to see if the guess has added up to the random number yet
 		if (newScore > random) {
@@ -52,16 +56,17 @@ clickEvent: function() {
 			wins++;
 			$('#wins').html("Wins: " +wins);
 		};
-	},
+	});
 
-
-// end of the object
-};
 
 // initialize the game
-crystalGame.initializeGame();
+initializeGame();
 
-// when a gem is clicked, add it's value to the score
-$('.gem').on('click', crystalGame.clickEvent());
+
+// end of the document.ready
+});
+
+
+
 
 
