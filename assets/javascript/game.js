@@ -1,10 +1,16 @@
 
 $(document).ready(function() {
 
+//make global variables accessible by all functions.
+var random = 0;
+var wins = 0;
+var losses = 0;
+var newScore =  0;
+
 // a function to initiaze the game
 function initializeGame() {
 	// assign a random number between 19 -120 as a target number and print it to the screen.
-	var random = Math.floor(Math.random() * 101 +19);	
+	random = Math.floor(Math.random() * 101 +19);	
 	$('#random').html(random);
 	
 	// create four random numbers 1-12.  Assign them to each gem. 
@@ -23,16 +29,15 @@ function initializeGame() {
 	console.log($('#green').data('gemValue'));
 
 	// set wins losses and score to zero and print those to the screen.
-	var wins = 0;
-	var losses = 0;
-	var score = 0;
+
+	
 	$('#wins').html("Wins: " +wins);
 	$('#losses').html("Losses: " +losses);
-	$('#score').html(0).data('scoreValue', 0);
+	$('#score').html(0).data(newScore);
 
 };
 
-var newScore =  0;
+
 
 // when a gem is clicked, add it's value to the score
 $(document).on('click', 'button', function() {
@@ -48,13 +53,17 @@ $(document).on('click', 'button', function() {
 		if (newScore > random) {
 			alert("Sorry you went over, you lost.");
 			losses++;
-			$('#losses').html("Losses: " +losses);
+			$('#losses').text("Losses: " +losses);
+			newScore = 0;
+			initializeGame();
 		}
 
 		else if (newScore === random) {
 			alert("You Win!  Yaaaayyyy!");
 			wins++;
-			$('#wins').html("Wins: " +wins);
+			$('#wins').text("Wins: " +wins);
+			newScore = 0;
+			initializeGame();
 		};
 	});
 
