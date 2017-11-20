@@ -33,7 +33,7 @@ function initializeGame() {
 	newScore = 0;
 	$('#wins').html("Wins: " +wins);
 	$('#losses').html("Losses: " +losses);
-	$('#score').html(0);
+	$('#guess').html(0);
 
 };
 
@@ -53,17 +53,19 @@ $(document).on('click', 'button', function() {
 		if (newScore > random) {
 			losses++;
 			$('#losses').text("Losses: " +losses);
-			newScore = 0;
+			
+			
+			alert("Sorry you went over, you lost. Your final score is: "+newScore+".");
 			initializeGame();
-			alert("Sorry you went over, you lost. Your final score will show next, but the real score is back to zero.");
 		}
 
 		else if (newScore === random) {
 			wins++;
 			$('#wins').text("Wins: " +wins);
-			newScore = 0;
+			
+			
+			alert("You Win!  Yaaaayyyy!  Your final score is: "+newScore+".");
 			initializeGame();
-			alert("You Win!  Yaaaayyyy!  Your final score will show next, but the real score is back to zero.");
 		};
 	});
 
