@@ -30,10 +30,10 @@ function initializeGame() {
 
 	// set wins losses and score to zero and print those to the screen.
 
-	
+	newScore = 0;
 	$('#wins').html("Wins: " +wins);
 	$('#losses').html("Losses: " +losses);
-	$('#score').html(0).data(newScore);
+	$('#score').html(0);
 
 };
 
@@ -51,19 +51,19 @@ $(document).on('click', 'button', function() {
 	
 		// check to see if the guess has added up to the random number yet
 		if (newScore > random) {
-			alert("Sorry you went over, you lost.");
 			losses++;
 			$('#losses').text("Losses: " +losses);
 			newScore = 0;
 			initializeGame();
+			alert("Sorry you went over, you lost. Your final score will show next, but the real score is back to zero.");
 		}
 
 		else if (newScore === random) {
-			alert("You Win!  Yaaaayyyy!");
 			wins++;
 			$('#wins').text("Wins: " +wins);
 			newScore = 0;
 			initializeGame();
+			alert("You Win!  Yaaaayyyy!  Your final score will show next, but the real score is back to zero.");
 		};
 	});
 
